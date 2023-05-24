@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.js"></script>
+
+</head>
+<body ng-app="App">
+    <h1><center>this is angular js template</center></h1>
+    <a href="#!start">start</a>
+    <a href="#!stop">stop</a>
+    <a href="#!/">back</a>
+    
+    <script type='text/ng-template' id="back.html">
+        {{in}}
+        <ol>
+            <li>click on start</li>
+            
+            <li>click on stop</li>
+           
+        </ol>
+    </script>
+    <script type='text/ng-template' id="start.html">
+        <h1>textbox for start</h1>
+
+        <input ng-model="enter" type='text'></a>
+        {{in , enter}}
+    </script>
+    <script type='text/ng-template' id="stop.html">
+        <h1>textbox for stop</h1>
+       <input ng-model="enter" type='text'>
+       {{in , enter}}
+    </script>
+    <div ng-view></div>
+<script>    
+var app = angular.module('App',[])
+var app = angular.module('App',['ngRoute'])
+app.config(function($routeProvider){
+    $routeProvider
+        .when("/",{templateUrl:'back.html'})
+        .when("/start",{templateUrl:'/start.html',controller:'input'})
+        .when("/stop",{templateUrl:'stop.html',controller:'output'})
+})
+
+app.controller('input',function($scope){
+    $scope.in="enter name your name page"
+    
+});
+app.controller('output',function($scope){
+    $scope.in="enter name your name page"
+    
+});
+</script>
+    
+</body>
+</html>

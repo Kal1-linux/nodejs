@@ -1,0 +1,28 @@
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script> 
+</head>
+<body ng-app="a">
+
+<a href="#!one" >one</a>
+<div ng-view></div>
+<script type="text/ng-template" id="one.html">
+
+    {{x}}
+</script>
+<script>
+var app= angular.module("a",["ngRoute"])
+app.config(function($routeProvider){
+	$routeProvider
+    .when("/one",{
+    templateUrl:"one.html",
+    controller:"c"
+    })  
+});
+app.controller("c",function($scope){
+        $scope.x="hello1";	
+})
+</script>
+</body>
+</html>

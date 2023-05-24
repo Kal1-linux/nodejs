@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body  ng-app="MApp" ng-controller="Mctrl">
+    <div>
+        <img src="cert.jpeg"></img>
+        <form >
+            <h6></h6>
+            Username:<input type="text" ng-model="Ue"></input><br>
+            Password:<input type="password" ng-model="Pd"></input><br>
+            Email:<input type="email" ng-model="El"></input><br>
+            Phone:<input type="number" ng-model="Pe"></input><br>
+            Occupation<input type="text" ng-model="On"></input><br>
+            Gender:<br><input type="radio" name="gender" value="Male" ng-model="Gr">M</input>
+                    <input type="radio" name="gender" value="Female" ng-model="Gr">F</input><br>
+            <button ng-click="jay()" >submit</button>
+            <h6></h6>
+        </form>
+        <p>data is paasing :))</p>{{display}}
+    </div>
+
+<script >
+    var app = angular.module("MApp",[])
+    app.controller("Mctrl",function($scope){
+        $scope.jay = function(){
+          $scope.display="submited successfully";
+        }
+    });
+     
+    </script>
+
+</body>
+</html>

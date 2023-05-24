@@ -1,0 +1,32 @@
+body{
+    background-color: aqua;
+}
+
+img,div{
+    max-width: fit-content;
+    max-height: fit-content;
+    border-style: dashed;
+    text-align: center;
+}
+form{
+    text-decoration-style: solid;
+    background-color: greenyellow;;
+}
+h6
+{
+    border-style: dotted;
+    background-color: black;
+}
+input{
+    text-align: left;
+    text-indent: 10%;
+
+}
+input{
+    color:red;
+    background-color: grey;
+}
+div{
+    background-color: grey;
+}
+
