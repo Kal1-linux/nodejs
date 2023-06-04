@@ -6,4 +6,4 @@ node express.js
 on browser now change the path according to path visit in url example -->> http://localhost:8080/
                                                                             http://localhost:8080/cert.jpeg
                                                                             &&
-                                                                            http://localhost:8080/spa.html
+                                                                            http://localhost:8080/spa.html 
