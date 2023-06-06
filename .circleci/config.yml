@@ -13,15 +13,21 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+          
   deploy:
     docker:
-      -image: circleci/node:14
+      - image: circleci/node:14
     steps:
       - checkout
-      
+
       - run:
-          name: deploying
-          command: node express.js
+          name: Install dependencies
+          command: npm install
+
+      - run:
+          name: Build and deploy
+          command: npm run build && npm run deploy
+
          
 workflows:
   version: 2
