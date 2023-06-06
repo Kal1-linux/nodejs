@@ -24,13 +24,6 @@ jobs:
           name: Install dependencies
           command: npm install
       
-      - run:
-          name: Build
-          command: npm run build
-
-       - run:
-          name: Deploy
-          command: npm run deploy
         
 workflows:
   version: 2
