@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:14
-      - image: cimg/python:3.11
     steps:
       - checkout
 
@@ -14,3 +13,21 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+  deploy:
+    docker:
+      -image: circleci/node:14
+    steps:
+      -checkout
+      
+      -run:
+         name: deploying
+         command: node express.js
+         
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build          
