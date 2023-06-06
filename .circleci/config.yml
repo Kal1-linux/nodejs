@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:14
-      - image: cimg/python:3.11
+      - image: circleci/python:3.11
     steps:
       - checkout
 
