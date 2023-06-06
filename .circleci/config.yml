@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:14
+      - image: circleci/node:14
       - image: cimg/python:3.11
     steps:
       - checkout
