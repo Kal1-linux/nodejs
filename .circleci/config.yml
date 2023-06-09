@@ -9,23 +9,34 @@ jobs:
       - run:
           name: Install packages
           command: npm install
-          
+
   deploy:
     docker:
       - image: circleci/node:16
+
+    working_directory: ~/my-express-app
+
     steps:
       - checkout
 
+      - setup_remote_docker:
+          version: 20.10.7
+
       - run:
           name: Install dependencies
-          command: npm install          
+          command: npm install
+
       - run:
-          name: Install express          
-          command: node express.js
-      
+          name: Build Docker image
+          command: docker build -t my-express-app .
+
+      - run:
+          name: Run Docker container
+          command: docker run -d -p 8080:8080 my-express-app
+          
         
 workflows:
-  version: 2
+  version: 2.1
   build_and_deploy:
     jobs:
       - build
