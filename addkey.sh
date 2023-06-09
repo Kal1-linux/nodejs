@@ -1,3 +1,2 @@
-rm ~/.ssh/*
-ssh-keygen -t rsa -b 4096 -N '' <<<$'\n'
-cat ~/.ssh/id_rsa.pub
+apt install sshpass -y
+sshpass - "ubuntu" ssh ubuntu@ec2-54-204-74-104.compute-1.amazonaws.com
