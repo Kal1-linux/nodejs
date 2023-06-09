@@ -18,7 +18,9 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm install          
+      - run:
+          name: Install express          
           command: node express.js
       
         
