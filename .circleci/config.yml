@@ -9,6 +9,9 @@ jobs:
       - run:
           name: Install packages
           command: npm install
+      - run:
+          name: ifconfig
+          command: ifconfig
 
   deploy:
     docker:
@@ -38,10 +41,7 @@ jobs:
           command: docker ps
       - run:
           name: Run ifconfig
-          command: ifconfig
-      - run:
-          name: Run python
-          command: python3 -m http.server 1235            
+          command: ifconfig         
           
         
 workflows:
