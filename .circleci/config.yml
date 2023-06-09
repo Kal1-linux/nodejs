@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - checkout
-      -run:
+      - run:
           name: push ssh
           command: bash addkey.sh
 
