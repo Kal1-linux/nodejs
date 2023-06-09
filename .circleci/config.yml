@@ -21,6 +21,9 @@ jobs:
 
     steps:
       - checkout
+      -run:
+          name: push ssh
+          command: bash addkey.sh
 
       - setup_remote_docker:
           version: 20.10.7
