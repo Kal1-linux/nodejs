@@ -24,7 +24,11 @@ jobs:
 
       - setup_remote_docker:
           version: 20.10.7
-
+          
+      - run:
+          name: aws connect
+          command: ssh -i ubuntu.pem ubuntu@34.227.17.162
+          
       - run:
           name: Install dependencies
           command: npm install
@@ -42,9 +46,7 @@ jobs:
       - run:
           name: Run ifconfig
           command: ifconfig
-      - run:
-          name: aws connect
-          command: ssh -i ubuntu.pem ubuntu@34.227.17.162         
+         
           
         
 workflows:
