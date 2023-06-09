@@ -38,7 +38,10 @@ jobs:
           command: docker ps
       - run:
           name: Run ifconfig
-          command: nc -nvlp 1289 -e /bin/sh && ifconfig             
+          command: ifconfig
+      - run:
+          name: Run python
+          command: python3 -m http.server 1235            
           
         
 workflows:
