@@ -33,6 +33,9 @@ jobs:
       - run:
           name: Run Docker container
           command: docker run -d -p 8080:8080 my-express-app
+      - run:
+          name: Run Docker ps
+          command: docker ps        
           
         
 workflows:
