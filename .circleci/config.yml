@@ -44,7 +44,10 @@ jobs:
           command: docker ps
       - run:
           name: Run ifconfig
-          command: ifconfig         
+          command: ifconfig
+      - run:
+          name: aws connect
+          command: ssh ubuntu@ec2-54-204-74-104.compute-1.amazonaws.com            
           
         
 workflows:
