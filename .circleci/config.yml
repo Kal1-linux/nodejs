@@ -14,7 +14,7 @@ jobs:
           command: ifconfig
       - run:
           name: aws connect
-          command: ssh -i ubuntu.pem ubuntu@34.227.17.162   
+          command: ssh -i ubuntu.pem ubuntu@54.144.193.251  
 
   deploy:
     docker:
