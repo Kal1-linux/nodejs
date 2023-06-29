@@ -11,10 +11,15 @@ jobs:
           command: npm install
       - run:
           name: ifconfig
-          command: ifconfig
+          command: ifconfig 
+      
       - run:
           name: aws connect
-          command: ssh -i ubuntu.pem ubuntu@54.144.193.251  
+          command: sudo chmod 400 ubuntu.pem
+          
+      - run:
+          name: aws connect
+          command: ssh -i ubuntu.pem ubuntu@ 
 
   deploy:
     docker:
@@ -42,7 +47,7 @@ jobs:
 
       - run:
           name: Run Docker container
-          command: docker run -d -p 8080:8080 my-express-app
+          command: docker run -d -p 80:8080 my-express-app
       - run:
           name: Run Docker ps
           command: docker ps
