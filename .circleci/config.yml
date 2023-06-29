@@ -29,23 +29,22 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
-
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: echo “Kali1234@” | docker login -u “dockerandkubernetes” — password-stdin
       - run:
           name: Build Docker image
-          command: docker build -t my-express-app .
+          command: docker pull dockerandkubernetes/kubernetes:latest .
 
       - run:
           name: Run Docker container
-          command: docker run -d -p 80:8080 my-express-app
+          command: docker run -itd -p 80:8080 dockerandkubernetes/kubernetes:latest
       - run:
           name: Run Docker ps
           command: docker ps
       - run:
           name: Run ifconfig
           command: ifconfig
-      - run:
-           name: done
-           command: curl -L http://localhost/
          
           
         
