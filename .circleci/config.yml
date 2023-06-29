@@ -15,7 +15,7 @@ jobs:
       
       - run:
           name: aws connect
-          command: sudo chmod 400 ubuntu.pem
+          command: sudo chmod 600 ubuntu.pem
           
       - run:
           name: aws connect
