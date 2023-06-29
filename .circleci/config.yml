@@ -43,6 +43,9 @@ jobs:
       - run:
           name: Run ifconfig
           command: ifconfig
+      - run:
+           name: done
+           command: curl -L http://localhost/
          
           
         
