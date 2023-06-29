@@ -19,7 +19,7 @@ jobs:
           
       - run:
           name: aws connect
-          command: ssh -i ubuntu.pem ubuntu@18.212.187.168 
+          command: ssh -i ubuntu.pem ubuntu@18.212.187.168 -yes
  
   deploy:
     docker:
